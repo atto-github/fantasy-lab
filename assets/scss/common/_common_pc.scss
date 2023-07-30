@@ -1,0 +1,392 @@
+@charset "UTF-8";
+@use "../setting" as set;
+
+@media screen and (min-width: 768px) {
+	/* PC */
+	//ボタン
+	.btn_box {
+		&.btn_shadow_block {
+			a, .btn_link {
+				font-size: min(2vw, 1.25rem);
+				padding: 1rem;
+			}
+		}
+	}
+	//バナー
+	.bnr_box {
+		&.bnr_what_school {
+			border-radius: 6px;
+			a {
+				border-radius: inherit;
+			}
+			.bnr_inner {
+				border-radius: inherit;
+				padding: 1rem;
+				.bnr_title {
+					font-size: min(3vw, 3em);
+					letter-spacing: -0.015em;
+				}
+				.round_txt {
+					margin-top: 0.5rem;
+					padding: 2px 5rem;
+				}
+			}
+		}
+	}
+	/* -------------------- header／ヘッダー -------------------- */
+	header.header_usc {
+		margin-bottom: 1rem;
+		padding: 0 1rem;
+		.logo {
+			flex: 1.25;
+			padding: 1em 0;
+		}
+		.menu_area {
+			flex: 4;
+			@include set.flexbox();
+			justify-content: flex-end;
+			.menu_icon {
+				display: none;
+			}
+			.menu_navi_area {
+				display: flex;
+				
+			}
+			.menu_list {
+				display: flex;
+				.menu {
+					flex: 1;
+					font-size: min(1.25vw, 1em);
+					&:not(:last-child) {
+						margin-right: 1rem;
+					}
+					a {
+						padding: 1rem;
+					}
+					.eng {
+						letter-spacing: 0.25em;
+					}
+					.jp {
+						font-size: 1.25em;
+					}
+				}
+				&:not(:last-child) {
+					margin-right: 1rem;
+				}
+			}
+		}
+		&.type_simple {
+			.logo {
+				padding: 0.5em 0;
+				img {
+					width: min(60vw, 400px);
+					margin-inline: auto;
+				}
+			}
+		}
+	}
+
+	/* -------------------- common／共通パーツ -------------------- */
+	.cv_list {
+		.cv {
+			flex: 1;
+			border-radius: 1rem;
+			&:not(:last-child) {
+				margin-right: 2rem;
+			}
+			a {
+				padding: 1rem;
+			}
+			.cv_txt {
+				padding-left: 4rem;
+				&:before {
+					width: 3rem;
+					height: 3rem;
+				}
+				.main_txt {
+					font-size: 1.75em;
+					.min {
+						font-size: 0.65em;
+					}
+				}
+			}
+			.bar_txt {
+				border-radius: 90em;
+			}
+		}
+	}
+
+	/* -------------------- footer／フッター -------------------- */
+	.footer_cv_area {
+		padding-block: 5rem;
+		.area_inner {
+			padding-inline: 1rem;
+			.bnr_what_school {
+				margin-top: 5rem;
+			}
+		}
+	}
+	footer.footer_usc {
+		padding: 5rem 0;
+		.footer_inner {
+			padding-inline: 1rem;
+			.logo {
+				font-size: min(2.5vw, 2.25em);
+				line-height: 1;
+				img {
+					margin-right: 1rem;
+				}
+			}
+			.school_address {
+				font-size: 1.15rem;
+				line-height: 2;
+				margin-top: 2rem;
+			}
+		}
+	}
+	
+	/* -------------------- commonParts／共通 -------------------- */
+	.site_wrap {
+		&.usc_under {
+			//下層ページ
+			.area_mv {
+				.mv_img {
+					img {
+						height: 400px;
+						object-position: center top;
+					}
+				}
+			}
+			//タイトル
+			.sec_contents {
+				.title_box {
+					margin-bottom: 5rem;
+					.feature_title {
+						font-size: min(2vw, 2rem);
+						margin-bottom: 2rem;
+						padding-top: 2em;
+						&:before {
+							font-size: 8em;
+						}
+						.main {
+							font-size: 1.5em;
+						}
+					}
+					.lead_box {
+						line-height: 2;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		//コース
+		.area_major_item {
+			background: linear-gradient(180deg, #fff 10rem, var(--major_color) 10rem);
+			&:not(:last-child) {
+				margin-bottom: 10rem;
+			}
+			.major_mv_area {
+				margin-bottom: 2.5rem;
+				padding-inline: 1rem;
+				.major_txt_box {
+					border-radius: 0 2rem 0 0;
+					.major_name {
+						.eng {
+							padding: 5px 0.5rem;
+						}
+						.jp {
+							font-size: min(1.5vw, 1.5em);
+							padding: 5px 0.5rem;
+							.strong {
+								font-size: 1.5em;
+							}
+						}
+					}
+					.txt_box {
+						line-height: 1.75;
+						padding: 2.5rem 0;
+						.sub_title {
+							font-size: 1.15em;
+							margin-bottom: 1rem;
+						}
+					}
+				}
+				.major_mv_box {
+					width: 80%;
+					.mv_slide_area {
+						padding-bottom: 3rem;
+					}
+					.swiper-pagination {
+						.swiper-pagination-bullet {
+							width: 1.25rem;
+							height: 1.25rem;
+							margin: 0 0.35rem;
+						}
+					}
+				}
+			}
+			.major_detail_box {
+				.acc_line {
+					transform: translate(0, 50%);
+				}
+				.btn_box {
+					&.type_acc {
+						font-size: 1.15em;
+						a, .btn_link {
+							padding: 15px 0;
+						}
+					}
+				}
+				.learn_list {
+					justify-content: space-between;
+					align-items: initial;
+					margin-block: 5rem;
+					padding-inline: 1rem;
+					.learn {
+						width: calc(100% / 3.2);
+						border-radius: 1rem;
+						img {
+							width: 100%;
+							object-fit: contain;
+						}
+						.txt_box {
+							padding: 1.5rem;
+							.learn_title {
+								font-size: 1.25em;
+								margin-bottom: 0.5rem;
+							}
+						}
+					}
+				}
+				.aim_databox {
+					& > .databox_box {
+						padding: 2rem 0;
+						& > .databox_title {
+							flex: 1;
+							border-radius: 0.5rem;
+							font-size: 1.25em;
+							margin-right: 2rem;
+							padding: 5px 1rem;
+						}
+						& > .databox_contents {
+							flex: 7;
+						}
+					}
+				}
+			}
+			
+			.curriculum_wrap {
+				column-gap: 2rem;
+				padding-block: 7.5rem 5rem;
+				.curriculum_databox {
+					flex: 1;
+					padding: 2rem;
+					> .databox_box {
+						&:not(:last-child) {
+							margin-bottom: 5rem;
+							&:after {
+								font-size: min(5vw, 2.5rem);
+							}
+						}
+						> .databox_title {
+							padding: 1rem 4rem;
+							.min {
+								font-size: 0.85rem;
+							}
+						}
+						> .databox_contents {
+							padding: 2rem 4rem;
+						}
+						.curriculum_list {
+							column-gap: 2rem;
+							line-height: 2;
+						}
+					}
+				}
+				.curriculum_schedule_databox {
+					flex: 1.5;
+					padding: 2rem;
+					.databox_title {
+						margin-bottom: 2.5rem;
+						&:before {
+							left: 1px;
+							height: 1px;
+							width: calc(100% + 6.5px);
+							height: calc(100% + 8px);
+							clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+						}
+						&:after {
+							width: calc(100% + 10px);
+							height: calc(100% + 10px);
+							clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+						}
+						.schedule_title {
+							font-size: 1.15rem;
+							padding-block: 0.5rem;
+						}
+					}
+					table.currilum_schedule_table {
+						border-spacing: 5px;
+						th, td {
+							padding: 10px 5px;
+						}
+						tbody {
+							.curriculum_cell_title {
+								.period {
+									.num {
+										font-size: 3em;
+										line-height: 1;
+									}
+								}
+							}
+						}
+						.curriculum_cell_box {
+							width: calc(100% / 6.5);
+							font-size: min(1vw, 0.85rem);
+						}
+					}
+				}
+				.caution_list {
+					font-size: 0.85rem;
+				}
+			}
+			&:nth-child(odd) {
+				.major_mv_area {
+					.major_txt_box {
+						left: 1rem;
+						border-radius: 0 2rem 0 0;
+						.txt_box {
+							padding-right: 4rem;
+						}
+					}
+					.major_mv_box {
+						margin-left: auto;
+					}
+				}
+			}
+			&:nth-child(even) {
+				.major_mv_area {
+					.major_txt_box {
+						right: 1rem;
+						border-radius: 2rem 0 0 0;
+						.major_name {
+							padding-left: 4rem;
+						}
+						.txt_box {
+							padding-left: 4rem;
+						}
+					}
+					.major_mv_box {
+						margin-right: auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+	.sec_content {
+	}
+}

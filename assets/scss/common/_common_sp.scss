@@ -1,0 +1,571 @@
+@charset "UTF-8";
+@use "../setting" as set;
+@media screen and (max-width: 768px) {
+	/* タブレット以下 */
+	//ボタン
+	.btn_box {
+		&.btn_shadow_block {
+			a, .btn_link {
+				font-size: 1.15rem;
+				padding: 1rem;
+			}
+		}
+	}
+	//バナー
+	.bnr_box {
+		&.bnr_what_school {
+			border-radius: 6px;
+			a {
+				border-radius: inherit;
+			}
+			.bnr_inner {
+				background-position: -27.5% center, calc(100% + 27.5%) center, center;
+				border-radius: inherit;
+				padding: 1rem;
+				.bnr_title {
+					font-size: 1.75rem;
+					line-height: 1.25;
+					letter-spacing: -0.015em;
+				}
+				.round_txt {
+					margin-top: 0.5rem;
+					padding: 2px 3rem;
+				}
+			}
+		}
+	}
+	/* -------------------- header／ヘッダー -------------------- */
+	header.header_usc {
+		border-top: initial;
+		padding: 0 1rem;
+		.logo {
+			padding: 1em 0;
+		}
+		.menu_area {
+			.menu_icon {
+				position: relative;
+				width: 5rem;
+				height: 5rem;
+				background: var(--usc_main_color);
+				@include set.flexbox();
+				@include set.flex_center();
+				z-index: 10;
+				.bar {
+					position: relative;
+					width: 30%;
+					height: 2px;
+					background: #000;
+					transition: transform .3s;
+					&:before,
+					&:after {
+						position: absolute;
+						content: "";
+						background: inherit;
+						height: inherit;
+						width: 100%;
+					}
+					&:before {
+						top: 0;
+						left: 50%;
+						transform: translate(-50%, -0.5em);
+						transition: inherit;
+					}
+					&:after {
+						top: 0;
+						left: 50%;
+						transform: translate(-50%, 0.5em);
+						transition: inherit;
+					}
+				}
+				input {
+					display: none;
+					&:checked {
+						& + .bar {
+							transform: rotate(45deg);
+							&:before {
+								transform: translate(-50%, 0);
+							}
+							&:after {
+								transform: translate(-50%, 0) rotate(90deg);
+							}
+						}
+					}
+				}
+			}
+			.menu_navi_area {
+				position: absolute;
+				top: 0;
+				left: 0;
+				transform: translate(0, calc(-100% - 2px));
+				width: 100%;
+				height: 80vh;
+				overflow-y: scroll;
+				overscroll-behavior-y: contain;
+				background: #fff;
+				z-index: 6;
+				transition: transform .3s;
+				padding: 5rem 2rem 5rem;
+			}
+			.menu_list {
+				.menu {
+					a {
+						width: 100%;
+						height: 100%;
+						padding: 1rem;
+					}
+					.eng {
+						letter-spacing: 0.25em;
+					}
+					.jp {
+						font-size: 1.25em;
+					}
+				}
+				&.type_cv {
+					@include set.flexbox();
+					margin-top: 2rem;
+					.menu {
+						flex: 1;
+						&:not(:last-child) {
+							margin-right: 1em;
+						}
+					}
+				}
+			}
+		}
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translate(0, -100%);
+			content: "";
+			width: 100vw;
+			height: 100vh;
+			background: rgba(0,0,0, 0.5);
+			transition: transform .3s;
+			z-index: 5;
+		}
+		&:has(.menu_icon input:checked) {
+			&:before {
+				position: fixed;
+				transform: translate(0, 0);
+			}
+			.menu_icon {
+				position: fixed;
+				top: 2px;
+				right: 1rem;
+			}
+			.menu_navi_area {
+				position: fixed;
+				transform: translate(0, 0);
+			}
+		}
+
+		&.type_simple {
+			&:before {
+				content: none;
+			}
+			.logo {
+				flex: 2;
+				padding: 0.5em 0;
+				img {
+					width: min(60vw, 400px);
+					margin-inline: auto;
+				}
+			}
+			.menu_list {
+				flex: 1;
+				margin-top: 0 !important;
+				margin-left: 2rem;
+				.menu {
+					line-height: 1;
+					a {
+						padding: 0.5rem 0.25rem;
+					}
+					.eng {
+						font-size: 0.5em;
+					}
+					.jp {
+						font-size: 0.75em;
+						margin-top: 0.25rem;
+					}
+				}
+				&.type_cv {
+					@include set.flexbox();
+					.menu {
+						flex: 1;
+						.menu_txt {
+							width: max-content;
+						}
+						&:not(:last-child) {
+							margin-right: 0.5em;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* -------------------- footer／フッター -------------------- */
+	.footer_menu_area {
+		//通常ヘッダー・フッター時のSP版追従フッターを非表示
+		display: none;
+	}
+	.footer_cv_area {
+		padding-block: 2.5rem;
+		.area_inner {
+			padding-inline: 1.5rem;
+			.bnr_what_school {
+				margin-top: 2.5rem;
+			}
+		}
+	}
+	footer.footer_usc {
+		padding: 5rem 1.5rem;
+		.footer_inner {
+			padding-inline: 1rem;
+			.logo {
+				flex-wrap: nowrap;
+				font-size: 1.25rem;
+				line-height: 1;
+				img {
+					width: 90%;
+				}
+			}
+			.school_address {
+				font-size: 1.15rem;
+				line-height: 2;
+				margin-top: 2rem;
+			}
+		}
+	}
+
+	/* -------------------- common／共通パーツ -------------------- */
+	.cv_list {
+		.cv {
+			width: 100%;
+			border-radius: 1rem;
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+			a {
+				height: 100%;
+				padding: 1rem 0 1rem 0.5em;
+			}
+			.cv_txt {
+				width: 100%;
+				padding-left: 4.5rem;
+				&:before {
+					width: 3.5rem;
+					height: 3.5rem;
+				}
+				.main_txt {
+					font-size: 1.5em;
+					.min {
+						font-size: 0.65em;
+					}
+				}
+			}
+			.bar_txt {
+				border-radius: 90px 0 0 90px;
+				font-size: 0.85em;
+			}
+		}
+	}
+	
+	.site_wrap {
+		&.usc_under {
+			//下層ページ
+			.area_mv {
+				.mv_img {
+					img {
+						height: 250px;
+						object-position: center center;
+					}
+				}
+			}
+			//タイトル
+			.sec_contents {
+				.title_box {
+					margin-bottom: 5rem;
+					.feature_title {
+						font-size: 1.35em;
+						margin-bottom: 2rem;
+						padding-top: 2em;
+						&:before {
+							font-size: 8em;
+						}
+						.main {
+							font-size: 1.5em;
+						}
+					}
+					.lead_box {
+						line-height: 2;
+					}
+				}
+			}
+		}
+
+		//コース
+		.area_major_item {
+			background: linear-gradient(180deg, #fff 10rem, var(--major_color) 10rem);
+			&:not(:last-child) {
+				margin-bottom: 5rem;
+			}
+			.major_mv_area {
+				@include set.flexbox();
+				flex-direction: column-reverse;
+				margin-bottom: 2.5rem;
+				.major_txt_box {
+					position: relative;
+					width: 100%;
+					background: none;
+					border-radius: 0 3rem 0 0;
+					margin-top: -5rem;
+					padding: 0 1.5rem;
+					&:before {
+						position: absolute;
+						top: 0;
+						content: "";
+						width: 50vw;
+						height: 100%;
+						background: var(--major_color);
+					}
+					& > * {
+						position: relative;
+						z-index: 2;
+					}
+					.major_name {
+						font-size: 0.95em;
+						.eng {
+							padding: 5px 0.5rem;
+						}
+						.jp {
+							font-size: 1.15em;
+							padding: 5px 0.5rem;
+							.strong {
+								font-size: 1.5em;
+							}
+							&.name_bg {
+								display: inline-block;
+								box-decoration-break: clone;
+								line-height: 1.15;
+								padding: 10px 10px 5px;
+							}
+						}
+
+					}
+					.txt_box {
+						line-height: 1.75;
+						padding: 2.5rem 0 0;
+						.sub_title {
+							margin-bottom: 1rem;
+						}
+						.txt {
+							font-size: 0.85em;
+						}
+					}
+				}
+				.major_mv_box {
+					width: 100%;
+					.mv_slide_area {
+						padding-bottom: 3rem;
+						img {
+							height: 300px;
+							object-fit: cover;
+						}
+					}
+					.swiper-pagination {
+						.swiper-pagination-bullet {
+							width: 1rem;
+							height: 1rem;
+							margin: 0 0.25rem;
+						}
+					}
+				}
+			}
+			.major_detail_box {
+				.acc_line {
+					transform: translate(0, 50%);
+				}
+				.btn_box {
+					&.type_acc {
+						font-size: 1.15em;
+						a, .btn_link {
+							padding: 2.5px 0;
+						}
+					}
+				}
+				.learn_list {
+					margin-block: 5rem;
+					//padding-inline: 1.5rem;
+					.learn {
+						width: 100%;
+						border-radius: 1rem;
+						/* &:not(:last-child) {
+							margin-bottom: 2.5rem;
+						} */
+						img {
+							width: 100%;
+							object-fit: contain;
+						}
+						.txt_box {
+							padding: 1.5rem;
+							.learn_title {
+								font-size: 1.25em;
+								margin-bottom: 0.5rem;
+							}
+						}
+					}
+				}
+				.aim_databox {
+					& > .databox_box {
+						padding: 2rem 1.5rem;
+						& > .databox_title {
+							border-radius: 0.5rem;
+							margin-bottom: 1rem;
+							padding: 2.5px 1rem;
+						}
+						& > .databox_contents {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			.curriculum_wrap {
+				flex-wrap: wrap;
+				row-gap: 2rem;
+				padding-block: 5rem 5rem;
+				.curriculum_databox {
+					width: 100%;
+					padding: 1.5rem;
+					> .databox_box {
+						&:not(:last-child) {
+							margin-bottom: 6rem;
+							&:after {
+								font-size: min(10vw, 2.5rem);
+							}
+						}
+						> .databox_title {
+							padding: 1rem;
+							.min {
+								font-size: 0.85rem;
+							}
+						}
+						> .databox_contents {
+							padding: 1.5rem;
+						}
+						.curriculum_list {
+							column-gap: 2rem;
+							line-height: 2;
+						}
+					}
+				}
+				.curriculum_schedule_databox {
+					width: 100%;
+					padding: 2rem 1rem;
+					.databox_title {
+						margin-bottom: 2.5rem;
+						&:before {
+							left: 1px;
+							height: 1px;
+							width: calc(100% + 6.5px);
+							height: calc(100% + 8px);
+							clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+						}
+						&:after {
+							width: calc(100% + 10px);
+							height: calc(100% + 10px);
+							clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+						}
+						.schedule_title {
+							font-size: 1.15rem;
+							padding-block: 0.5rem;
+						}
+					}
+					table.currilum_schedule_table {
+						border-spacing: 2.5px;
+						th, td {
+							padding: 5px 2.5px;
+						}
+						tbody {
+							.curriculum_cell_title {
+								font-size: min(2vw, 0.5rem);
+								.period {
+									.num {
+										font-size: 3em;
+										line-height: 1;
+									}
+								}
+							}
+						}
+						.curriculum_cell_box {
+							width: calc(100% / 6.5);
+							font-size: min(1vw, 0.85rem);
+							&.type_basic {
+								border: 2.5px solid var(--major_color);
+							}
+						}
+					}
+				}
+				.caution_list {
+					font-size: 0.75rem;
+				}
+			}
+			&:nth-child(odd) {
+				.major_mv_area {
+					.major_txt_box {
+						&:before {
+							left: 0;
+							transform: translate(0, -25%);
+							border-radius: 0 2rem 0 0;
+						}
+						.major_name {
+							left: 1.5rem;
+						}
+					}
+					.major_mv_box {
+						margin-left: auto;
+					}
+				}
+			}
+			&:nth-child(even) {
+				.major_mv_area {
+					align-items: flex-end;
+					.major_txt_box {
+						&:before {
+							right: 0;
+							transform: translate(0, -25%);
+							border-radius: 2rem 0 0 0;
+						}
+						.major_name {
+							left: initial;
+							right: 1.5rem;
+							padding-left: 1.5rem;
+						}
+					}
+					.major_mv_box {
+						margin-right: auto;
+					}
+				}
+			}
+			&.major_k-pop {
+				//K-POPコース
+			}
+			&.major_dance {
+				//ダンスコース
+			}
+			&.major_musicians {
+				//ヴォーカル＆ミュージシャンコース
+			}
+			&.major_entertainment {
+				//芸能活動コース
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 640px) {
+	//SP
+	
+}

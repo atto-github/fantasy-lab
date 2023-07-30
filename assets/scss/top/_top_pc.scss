@@ -1,0 +1,918 @@
+@charset "UTF-8";
+@use "../setting" as set;
+
+@media screen and (min-width: 768px) {
+	//PC
+	.usc_top {
+		.sec_mv {
+			padding-bottom: 10rem;
+			.mv_title_box {
+				border-radius: 2rem;
+				padding: 5rem 10rem 10rem;
+				.mv_title {
+					font-size: min(3vw, 3em);
+					.strong {
+						font-size: 1.25em;
+					}
+				}
+			}
+			.mv_txt_box {
+				top: 20%;
+				padding: 0 1rem;
+				.main_txt {
+					font-size: min(3vw, 2.5em);
+					line-height: 1.75;
+					letter-spacing: 0.05em;
+					.txtbg {
+						line-height: 1.5;
+						padding: 0 1.5rem;
+					}
+				}
+			}
+			.mv_img_box {
+				width: 80%;
+				margin-left: auto;
+			}
+			.animation_area {
+				&:before {
+					height: 10rem;
+				}
+				.student_illust {
+					display: block;
+					transform: translate(-2rem, 4rem);
+				}
+			}
+			.scroll_guide {
+				position: absolute;
+				top: 50%;
+				left: 2rem;
+				transform: transalte(0, -50%);
+				font-family: var(--font_ronde);
+				writing-mode: vertical-rl;
+				&:after {
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translate(-50%, calc(100% + 1rem));
+					content: "";
+					height: 20em;
+					width: 1px;
+					clip-path: inset( 0 0 100% 0 );
+					animation: animeScrollLine 3s ease 1.5s infinite normal forwards running;
+					z-index: 2;
+				}
+			}
+			@keyframes animeScrollLine {
+				0% {
+					clip-path: inset(0 0 100% 0);
+				}
+				25% {
+					clip-path: inset(0);
+				}
+				40% {
+					clip-path: inset(0);
+				}
+				60% {
+					clip-path: inset(100% 0 0 0);
+				}
+			}
+		}
+
+		.event_bnr_area {
+			@include set.flexbox();
+			justify-content: center;
+			margin-top: 1.5rem;
+			padding-inline: 1rem;
+			.event_bnr {
+				border: 2px solid #000;
+				a {
+					.bnr_inner {
+						padding: 0.5rem;
+						.bnr_img {
+							flex: 1;
+							margin-right: 1rem;
+							img {
+								border-radius: 0.75rem 0 0 0.75rem;
+							}
+						}
+						.txt_box {
+							flex: 2;
+							&:after {
+								width: 1rem;
+								height: 1rem;
+							}
+							.event_name {
+								font-size: 1.15em;
+								margin-top: 1rem;
+								padding-top: 1rem;
+							}
+							.date_databox {
+								margin-top: 1rem;
+								padding: 0 0 1rem 0;
+								& > .databox_title {
+									flex: 1;
+									font-size: 0.85em;
+									margin-right: 1rem;
+									padding: 0 1rem;
+								}
+								& > .databox_contents {
+									flex: 1.5;
+									font-size: min(1.5vw, 1.25em);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.sec_mv_lead {
+			//MV下リード文
+			padding-block: 2.5rem 1.5rem;
+			.lead_contents {
+				margin: 2.5rem 0 5rem;
+				.txt {
+					line-height: 2;
+				}
+				.sub_title {
+					margin-bottom: 1rem;
+				}
+				.lead_txt {
+					line-height: 2;
+				}
+				.moreAccContents {
+					padding-bottom: 2.5rem;
+				}
+			}
+			/* .lead_support_box_area {
+				margin-block: 5rem;
+				& > * {
+					flex: 1;
+				}
+				.exemption_databox {
+					@include set.flexbox();
+					flex-direction: column;
+					padding: 2rem;
+					& > .databox_title {
+						@include set.flexbox();
+						@include set.flex_center();
+						flex: 1;
+						font-size: 1.5rem;
+						margin-bottom: 1rem;
+					}
+					& > .databox_contents {
+						@include set.flexbox();
+						@include set.flex_center();
+						flex: 2;
+					}
+				}
+				.lead_support_box {
+					margin-left: 2.5rem;
+					padding: 0.5rem 1rem;
+					.support_img {
+						.img_caption {
+							margin-top: 1rem;
+						}
+					}
+				}
+			} */
+			.lead_learn_point_area {
+				margin-block: 2.5rem 5rem;
+				.recommend_list {
+					column-gap: 2rem;
+					.recommend {
+						flex: 1;
+						padding: 1rem 2rem;
+						.strong {
+							font-size: 1.15em;
+						}
+					}
+				}
+				.sec_learn_point {
+					margin-block: 2.5rem;
+					.learn_point_title {
+						font-size: 2.5rem;
+						margin-bottom: 1rem;
+						.sub_title {
+							font-size: 0.85em;
+							margin-left: 1rem;
+							padding: 0.25rem 0.5rem;
+						}
+					}
+					.learn_point_list {
+						row-gap: 2rem;
+						padding: 2rem;
+						.learn_point {
+							width: calc(100% / 2.15);
+							column-gap: 1rem;
+							.point_title {
+								font-size: 1.25rem;
+								line-height: 1;
+								padding: 1rem;
+								.num {
+									font-size: 2em;
+								}
+							}
+							.point_desc {
+								.strong {
+									font-size: 1.15rem;
+								}
+								.caution {
+									font-size: 0.85rem;
+								}
+							}
+						}
+					}
+				}
+			}
+			.about_usc_databox {
+				& > .databox_title {
+					font-size: 1.5rem;
+					padding: 0.75rem 1rem;
+				}
+				& > .databox_contents {
+					padding: 2rem;
+					& > * {
+						&:not(:last-child) {
+							margin-right: 2rem;
+						}
+					}
+					.txt_box {
+						flex: 1.5;
+						padding-block: 1rem;
+						.about_title {
+							font-size: 1.25rem;
+							line-height: 1.75;
+						}
+						.txt {
+							margin-top: 1.5rem;
+						}
+						.terms_list {
+							font-size: 1.15rem;
+							margin-block: 0.5rem;
+						}
+					}
+					.flow_graph {
+						flex: 1;
+						.flow_list {
+							.flow {
+								font-size: 1.5rem;
+								.flow_inner {
+									height: 100%;
+									padding: 0.25rem 1rem;
+								}
+								.branch_area {
+									.branch_box,
+									.branch_box .flow_inner {
+										&:before {
+											width: 2.5rem;
+											height: 3rem;
+										}
+										&:after {
+											font-size: 1rem;
+										}
+									}
+									.branch_box .flow_inner {
+										&:before {
+											transform: translate(-50%, calc(100% + 0.5rem));
+										}
+										&:after {
+											transform: translate(-150%, calc(100% + 2rem));
+										}
+									}
+								}
+								&.type_high {
+									margin-block: 3.5rem;
+									.branch_box {
+										.flow_inner {
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.lead_more_btn {
+				.btn_link {
+					padding: 0.25rem 2rem;
+				}
+			}
+		}
+
+		.sec_cs_field {
+			//coming soonコンテンツ @ コース一覧
+			.field_list {
+				margin-block: 2.5rem;
+				padding-inline: 1rem;
+				.field {
+					width: calc(100% / 2.1);
+					&:not(:nth-last-child(-n+2)) {
+						margin-bottom: 1.5rem;
+					}
+					.field_img {
+						width: 20%;
+						img {
+							border-radius: 0.75rem 0 0 0.75rem;
+						}
+					}
+					.txt_box {
+						width: 78%;
+						padding: 0.75rem 1rem 0.5rem;
+						.field_name {
+							font-size: min(1.75vw, 1.5em);
+							line-height: 1;
+							margin-bottom: 0.5rem;
+							padding-bottom: 0.25rem;
+							.sub_name {
+								font-size: 0.65em;
+							}
+						}
+						.txt_sub_box {
+							.sub_title {
+								font-size: 1.1em;
+								margin-bottom: 0.25rem;
+							}
+							.desc {
+								font-size: 0.9em;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.comingsoon_area {
+			//coming soonコンテンツ @ 学生
+			margin-block: 10rem;
+			.soon_inner {
+				padding-inline: 1rem;
+			}
+			.soon_student_img {
+				margin-block: 10rem;
+				.facility_photo {
+					flex: 1;
+					margin-right: 2.5rem;
+				}
+				.student_comment {
+					flex: 1;
+					border-radius: 1rem;
+					font-size: min(2vw, 2em);
+					&:before {
+						top: 50%;
+						left: 0;
+						transform: translate(-100%, -50%);
+						clip-path: polygon(0 50%, 100% 0, 100% 100%);
+						width: 2.5rem;
+						height: 2.5rem;
+					}
+				}
+			}
+		}
+
+		.sec_roundbox {
+			border-radius: 2rem;
+			padding-inline: 1rem;
+			.roundbox_title {
+				font-size: min(1.5vw, 1.35em);
+				padding: 5px 2rem;
+			}
+			.roundbox_inner {
+				padding: 2.5rem 0 0;
+			}
+		}
+
+		.feature_list {
+			.feature {
+				margin-bottom: 5rem;
+				padding-block: 2.5rem;
+				.title_box {
+					margin-bottom: 5rem;
+					.feature_title {
+						font-size: min(2vw, 2rem);
+						margin-bottom: 2rem;
+						padding-top: 2em;
+						&:before {
+							font-size: 8em;
+						}
+						.main {
+							font-size: 1.5em;
+						}
+					}
+					.lead_box {
+						line-height: 2;
+						text-align: center;
+					}
+				}
+				&.feature01 {
+					//好きなことに打ち込める教室と設備
+					.facility_img_list {
+						.facility_img {
+							column-gap: 0.75rem;
+							row-gap: 0.75rem;
+						}
+					}
+					.btn_shadow_block {
+						margin-top: 2.5rem;
+					}
+				}
+				&.feature02 {
+					//"楽しく" "自分らしく"成長できる3つの専攻
+					.major_list {
+						margin-bottom: 5rem;	
+					}
+
+					.sec_wmajor {
+						margin-top: 10rem;
+						.roundbox_inner {
+							padding-inline: 2.5rem;
+						}
+						.lead_box {
+							line-height: 2;
+							margin-top: 1.5rem;
+							.lead {
+								text-align: center;
+							}
+						}
+						.example_databox {
+							margin: 5rem 0 2.5rem;
+							& > .databox_box {
+								& > .databox_title {
+									font-size: min(2vw, 1.5em);
+								}
+								& > .databox_contents {
+									.select_major_list {
+										padding-block: 2.5rem 5rem;
+										.select_major {
+											width: min(15vw, 17.5rem);
+											height: min(15vw, 17.5rem);
+											&.type_entry,
+											&.type_select {
+												padding: 0 0.5rem 1rem;
+												.select_txt {
+													font-size: min(1.25vw, 1.25em);
+													line-height: 1.25;
+													.strong {
+														font-size: 1.5em;
+													}
+												}
+											}
+											&.type_entry {
+												margin-right: 5rem;
+												&:before {
+													width: 4.5rem;
+													height: 4.5rem;
+												}
+												&:after {
+													top: 50%;
+													right: calc(0% - 4.25rem);
+													transform: translate(0, -50%);
+													font-size: min(8vw, 8em);
+												}
+											}
+											&.type_select {
+												margin-right: 5rem;
+												&:before {
+													width: 6rem;
+													height: 6rem;
+													transform: translate(-50%, 35%);
+												}
+												&:after {
+													top: 50%;
+													right: calc(0% - 4.25rem);
+													transform: translate(0, -50%);
+													font-size: min(8vw, 8em);
+												}
+											}
+											&.type_result {
+												width: min(14vw, 15rem);
+												height: min(14vw, 15rem);
+												padding: 0.5rem;
+												.result_txt {
+													font-size: min(1.25vw, 1.15em);
+													transform: translate(50%, -25%);
+													padding: 0.5rem 1rem;
+												}
+											}
+										}
+										&.type_kpop {
+											.select_major {
+												&.type_select {
+													&:before {
+														transform: translate(-50%, 60%);
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				&.feature03 {
+					//楽しく充実したスクールライフ
+					.uniform_wrap {
+						&:before {
+							width: calc(100% - 15rem);
+							height: calc(100% - 15rem);
+							border-radius: 2rem;
+						}
+						.uniform_inner {
+							padding-inline: 1rem;
+							.point_list {
+								.point {
+									padding: 0.75rem;
+									.main_photo {
+										img {
+											width: min(14vw, 200px);
+										}
+									}
+								}
+								&.point_man {
+									.point {
+										&:nth-child(1) {
+											transform: translate(110%, -5%);
+										}
+										&:nth-child(2) {
+											transform: translate(15%, 0);
+										}
+										&:nth-child(3) {
+											transform: translate(130%, -50%);
+										}
+									}
+								}
+								&.point_woman {
+									.point {
+										&:nth-child(1) {
+											transform: translate(145%, -25%);
+										}
+										&:nth-child(2) {
+											transform: translate(20%, -75%);
+										}
+										&:nth-child(3) {
+											transform: translate(120%, -100%);
+										}
+									}
+								}
+							}
+							.point_txt_list {
+								padding-inline: 1rem;
+								.point_txt {
+									font-size: min(1.75vw, 1.75em);
+									line-height: 1.2;
+									.txt_bg {
+										padding: 2px 0.5rem;
+									}
+									&:nth-child(1) {
+										top: 12.5%;
+										left: 0;
+									}
+									&:nth-child(2) {
+										bottom: 27.5%;
+										right: 0;
+									}
+									&:nth-child(3) {
+										bottom: 12.5%;
+										right: 10%;
+									}
+								}
+							}
+						}
+					}
+
+					.school_life_wrap {
+						margin-top: 5rem;
+						padding-block: 4rem;
+						.schoollife_list {
+							row-gap: 2rem;
+							.schoollife {
+								width: calc(100% / 2.1);
+								border-radius: 6px;
+								padding: 2rem;
+								&.type_wide {
+									width: 100%;
+								}
+								.schoollife_title {
+									font-size: min(1.75vw, 1.5em);
+									transform: translate(-2.9rem, 0);
+									padding: 2px 1rem 2px 3rem;
+									&:before {
+										width: 1rem;
+										height: 0.5rem;
+									}
+								}
+								.desc {
+									margin-top: 2rem;
+									em {
+										margin-bottom: 0.5rem;
+									}
+								}
+								.img_box {
+									margin-top: 2rem;
+								}
+								&.type_facility {
+									//施設開放
+									.photo_list {
+										row-gap: 2rem;
+										margin-top: 2rem;
+										.photo {
+											width: calc(100% / 2.1);
+											img {
+												border: 2px solid #000;
+												border-radius: 0.5rem;
+											}
+										}
+									}
+									.illust_photo {
+										max-width: 60%;
+										transform: translate(-1rem, -1rem);
+									}
+								}
+								&.type_rest_space {
+									//休憩スペース
+									
+								}
+								&.type_teacher {
+									//担任制
+									.main_photo {
+										max-width: 60%;
+									}
+									.sub_img {
+										max-width: 45%;
+									}
+								}
+								&.type_ssc {
+									//スチューデントサービスセンター（SCC）
+									.ssc_img {
+										.ssc_comment {
+											font-size: min(2vw, 2rem);
+										}
+									}
+								}
+								/* &.type_oneday {
+									//高等課程の1日
+									.schedule_databox {
+										--schedule_radius: 6px;
+
+										width: 80%;
+										margin-top: 4rem;
+										& > .databox_box {
+											&:not(:last-child) {
+												margin-bottom: 0.5rem;
+											}
+											& > .databox_title {
+												width: 20%;
+												&:not(:empty) {
+													border-radius: var(--schedule_radius) 0 0 var(--schedule_radius);
+												}
+												&:empty {
+													& + .databox_contents {
+														border-top-left-radius: var(--schedule_radius);
+														border-bottom-left-radius: var(--schedule_radius);
+													}
+												}
+											}
+											& > .databox_contents {
+												width: 80%;
+												border-radius: 0 var(--schedule_radius) var(--schedule_radius) 0;
+												padding: 2px 1rem;
+											}
+										}
+									}
+									.illust_img {
+										top: 50%;
+										right: 0;
+										transform: translate(1rem, -50%);
+									}
+								} */
+								&.type_event {
+									//みんなで楽しむたくさんのイベント
+									.event_list {
+										column-gap: 2rem;
+										margin-top: 2rem;
+										.event {
+											flex: 1;
+											&:not(:nth-last-child(-n+2)) {
+												margin-bottom: 2.25rem;
+											}
+											&.type_pc_wide {
+												flex: 2;
+											}
+										}
+										.event_photo {
+											img {
+												border-radius: 6px;
+											}
+											.event_caption {
+												.month {
+													bottom: 0;
+													right: 0;
+													transform: translate(25%, 15%);
+													font-size: min(1.75vw, 1.75rem);
+													width: 5rem;
+													height: 5rem;
+													padding: 0 0.5rem;
+													.num {
+														font-size: 1.5em;
+													}
+												}
+												.event_name {
+													top: 0;
+													left: 0;
+													transform: translate(-0.5rem, -1rem) rotate(-10deg);
+												}
+											}
+										}
+									}
+									.sub_img {
+										max-width: 35%;
+									}
+								}
+								/* &.type_counseling {
+									//何でも相談できるスクールカウンセリング
+									.img_box {
+										margin-bottom: 5rem;
+										.sub_img {
+											transform: translate(1rem, 25%);
+											.sub_caption {
+												.comment {
+													font-size: 1.25rem;
+													&:nth-child(1) {
+														top: 55%;
+														left: 0;
+														transform: translate(1.5rem, 0);
+													}
+													&:nth-child(2) {
+														top: 0;
+														right: 0;
+														transform: translate(-40%, 30%);
+													}
+													&:nth-child(3) {
+														top: 50%;
+														right: 0;
+														transform: translate(-35%, 0);
+													}
+												}
+											}
+										}
+									}
+								} */
+								/* &.type_dormitory {
+									//安心安全の学生寮
+									.img_box {
+										margin-bottom: 5rem;
+										.sub_img {
+											transform: translate(0, 50%);
+											.sub_caption {
+												top: 50%;
+												left: 0;
+												transform: translate(12.5%, -70%);
+											}
+										}
+									}
+								} */
+							}
+						}
+					}
+				}
+				&.feature04 {
+					//1人ひとりに寄り添った進路サポート
+					.flow_area {
+						padding-inline: 1rem;
+						.flow_list {
+							.flow {
+								.flow_title {
+									font-size: min(2vw, 1.75em);
+								}
+								&.flow_usc {
+									padding: 1rem;
+								}
+								&.flow_process {
+									.flow_branch_list {
+										.flow_branch {
+											flex: var(--branch_flex_w, 1);
+											padding-top: 3.5rem;
+											&:before {
+												top: 0;
+												left: 50%;
+												transform: translate(-50%, 0);
+												clip-path: polygon(0 0, 100% 0, 50% 100%);
+												width: 3rem;
+												height: 1.5rem;
+											}
+											&:not(:last-child) {
+												margin-right: 2rem;
+											}
+											.branch_box {
+												height: 100%;
+												padding: 2rem 1rem;
+												&:after {
+													bottom: 0;
+													left: 50%;
+													transform: translate(-50%, 100%);
+													clip-path: polygon(0 0, 100% 0, 50% 100%);
+													width: 3rem;
+													height: 1.5rem;
+												}
+												.flow_title {
+													margin-bottom: 2rem;
+												}
+												.desc {
+													font-size: 0.85em;
+												}
+											}
+											&.type_specialist {
+												--branch_flex_w: 2;
+
+												.school_logo {
+													img {
+														width: 25%;
+														margin-inline: auto;
+														margin-bottom: 1rem;
+													}
+												}
+											}
+											&.type_partner {
+												--branch_flex_w: 2;
+
+												.school_list {
+													.school {
+														margin-bottom: 1rem;
+													}
+												}
+												.school_logo {
+													filter: drop-shadow(0 0 15px #fff) drop-shadow(0 0 25px #fff) drop-shadow(0 0 25px #fff);
+													img {
+														flex: 1;
+														width: 20%;
+														height: 40px;
+														object-fit: contain;
+														margin-right: 0.5rem;
+													}
+													.school_name {
+														flex: 2;
+													}
+												}
+											}
+										}
+									}
+								}
+								&.flow_job {
+									.flow_job_list {
+										width: 64.5%;
+										margin-top: 3.5rem;
+										.flow_job {
+											flex: 1;
+											&:not(:last-child) {
+												margin-right: 2rem;
+											}
+											.job_title {
+												border: 0.5rem solid var(--flow_job_color);
+												border-radius: 6px;
+												font-size: min(2vw, 1.75em);
+												padding: 0.5rem 1rem;
+											}
+										}
+									}
+								}
+							}
+						}
+						.student_img {
+							max-width: 20%;
+							transform: translate(-100%, 25%);
+							.student_comment {
+								top: 50%;
+								right: 0;
+								transform: translate(100%, -65%);
+								padding: 2.75rem 2rem;
+								.comment {
+									font-size: 0.85em;
+									transform: rotate(-5deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+
+	.sec_content {
+		.sec_title {
+		}
+
+	}
+
+	/* LINE BOX */
+	.linBox {
+		bottom: 5%;
+		width: 140px;
+	}
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+	.sec_content {
+	}
+}

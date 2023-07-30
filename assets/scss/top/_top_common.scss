@@ -1,0 +1,1156 @@
+@charset "UTF-8";
+@use "../setting" as set;
+
+.usc_top {
+	--content_max_width: calc(1440px + 2rem);
+	.sec_mv {
+		position: relative;
+		background: linear-gradient(180deg, #fff 10%, var(--usc_main_color) 10%);
+		.mv_title_box {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background: var(--usc_main_color);
+			z-index: 2;
+			.mv_title {
+				font-family: var(--font_ronde);
+				color: var(--usc_main_text_color);
+				.strong {
+					color: var(--usc_sub_color01);
+				}
+			}
+			//テキスト背景
+			.animeTxtBg {
+				position: relative;
+				//clip-path: inset(0 100% 0 0);
+				//animation: animeTxtBgWide 1s ease 1s 1 normal forwards running;
+				&.delay2 {
+					animation-delay: 1.35s;
+					&:before {
+						animation-delay: inherit;
+					}
+					.txtbg_txt {
+						animation-delay: calc(1.5s + 0.35s);
+					}
+				}
+				&.delay4 {
+					animation-delay: 1.7s;
+					&:before {
+						animation-delay: inherit;
+					}
+					.txtbg_txt {
+						animation-delay: inherit;
+					}
+				}
+				&:before {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translate(-1rem, calc(-50% + 0.75rem));
+					content: "";
+					width: 100%;
+					height: 90%;
+					background: #fff;
+					z-index: 1;
+					clip-path: inset(0 100% 0 0);
+					animation: animeTxtBgWideCover 1s ease 1s 1 normal forwards running;
+				}
+				.txtbg_txt {
+					position: relative;
+					z-index: 2;
+					clip-path: inset(100% 0 0 0);
+					animation: animeTxtBgWide 1s ease 1.5s 1 normal forwards running;
+				}
+			}
+
+			@keyframes animeTxtBgWide {
+				0% {
+					clip-path: inset(100% 0 0 0);
+				}
+				48% {
+					clip-path: inset(0);
+				}
+				100% {
+					clip-path: inset(0);
+				}
+			}
+			@keyframes animeTxtBgWideCover {
+				0% {
+					clip-path: inset(0 100% 0 0);
+				}
+				48% {
+					clip-path: inset(0);
+				}
+				50% {
+					clip-path: inset(0);
+				}
+				52% {
+					clip-path: inset(0);
+				}
+				100% {
+					clip-path: inset(0);
+				}
+			}
+		}
+		.mv_txt_box {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, 0);
+			width: min(100%, calc(1540px + 2rem));
+			z-index: 5;
+			.main_txt {
+				font-weight: bold;
+				.txtbg {
+					display: inline-block;
+					background: #fff;
+				}
+			}
+		}
+		.scroll_guide {
+			color: #fff;
+			&:after {
+				background: #fff;
+			}
+		}
+		.animation_area {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			text-align: right;
+			z-index: 2;
+			.student_illust {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				z-index: 3;
+			}
+		}
+	}
+
+	.event_bnr_area {
+		width: min(100%, var(--content_max_width));
+		margin-inline: auto;
+		.event_bnr {
+			width: min(55vw, 450px);
+			background: #fff;
+			border-radius: 1rem;
+			box-shadow: 7px 7px 0 0 rgba(0,0,0, 0.15);
+			transition: transform .3s, box-shadow .3s;
+			a {
+				/* @include set.flexbox();
+				width: 100%;
+				height: 100%; */
+				.bnr_inner {
+					.bnr_img {
+						img {
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+					.txt_box {
+						position: relative;
+						@include set.flexbox();
+						flex-direction: column;
+						justify-content: center;
+						&:after {
+							position: absolute;
+							bottom: 0;
+							right: 0;
+							content: "";
+							border-right: 5px solid #000;
+							border-bottom: 5px solid #000;
+
+						}
+						.event_name {
+							position: relative;
+							font-weight: bold;
+							&:before {
+								position: absolute;
+								top: 0;
+								left: 0;
+								transform: transalte(0, calc(-100% - 1rem));
+								content: "";
+								background: #000;
+								width: min(20%, 53px);
+								height: 5px;
+								border-radius: 9rem;
+							}
+						}
+						.date_databox {
+							@include set.flexbox();
+							align-items: center;
+							font-weight: bold;
+							& > .databox_title {
+								background: var(--usc_sub_color01);
+								color: #fff;
+								border-radius: 9rem;
+								text-align: center;
+							}
+						}
+					}
+				}
+			}
+			&:hover {
+				transform: translate(6px, 6px);
+				box-shadow: 1px 1px 0 0 rgba(0,0,0, 0.15);
+			}
+		}
+	}
+
+	.sec_mv_lead {
+		//MV下リード文
+		.lead_inner {
+			width: min(calc(100% - 3rem), calc(1200px + 2rem));
+			margin-inline: auto;
+			font-smoothing: antialiased;
+			-webkit-font-smoothing: antialiased;
+		}
+		.lead_contents {
+			.sub_title {
+				font-weight: bold;
+			}
+		}
+		/* .lead_support_box_area {
+			@include set.flexbox();
+			.exemption_databox {
+				border: 2px solid #000;
+				& > .databox_title {
+					font-weight: bold;
+					text-align: center;
+				}
+				& > .databox_contents {
+					background: #fff;
+					border-top: none;
+				}
+			}
+			.lead_support_box {
+				background: #d9e7f5;
+				.support_img {
+					.img_caption {
+						color: #0070aa;
+						font-weight: bold;
+						text-align: center;
+					}
+				}
+			}
+		} */
+		.lead_learn_point_area {
+			.recommend_list {
+				.recommend {
+					border-radius: 0.5rem;
+					border: 2px solid var(--usc_sub_color01);
+					background: #FFFCD6;
+					font-weight: bold;
+					text-align: center;
+					.txt {
+						line-height: initial;
+					}
+					.strong {
+						color: var(--usc_sub_color01);
+					}
+				}
+			}
+			.sec_learn_point {
+				.learn_point_title {
+					.sub_title {
+						font-family: var(--font_ronde);
+						background: var(--usc_main_color);
+						color: var(--usc_main_text_color);
+						border-radius: 0.25rem;
+					}
+				}
+				.learn_point_list {
+					background: rgba(var(--usc_main_rgb), 0.15);
+					color: var(--usc_main_text_color);
+					.learn_point {
+						@include set.flexbox();
+						align-items: center;
+						.point_title {
+							background: rgba(var(--usc_main_rgb), 0.35);
+							color: #fff;
+							border: 2px solid #fff;
+							text-align: center;
+							.num {
+								display: block;
+							}
+						}
+						.point_desc {
+							font-weight: bold;
+							.strong {
+								color: var(--usc_sub_color01);
+							}
+						}
+					}
+				}
+			}
+		}
+		.about_usc_databox {
+			border: 2px solid #000;
+			& > .databox_title {
+				background: var(--usc_main_color);
+				color: var(--usc_main_text_color);
+				font-weight: bold;
+				text-align: center;
+			}
+			& > .databox_contents {
+				@include set.flexbox();
+				.txt_box {
+					.terms_list {
+						counter-reset: leadTermCount;
+						.terms {
+							counter-increment: leadTermCount;
+							font-weight: bold;
+							&:before {
+								display: inline-block;
+								content: counter(leadTermCount);
+								border: 1px solid #000;
+								border-radius: 50%;
+								line-height: 1;
+								aspect-ratio: 1 / 1;
+								width: 1rem;
+								height: 1rem;
+								text-align: center;
+								margin-right: 0.5rem;
+							}
+						}
+					}
+				}
+				.flow_graph {
+					background: #fff;
+					.flow_list {
+						@include set.flexbox();
+						flex-direction: column-reverse;
+						text-align: center;
+						.flow {
+							.flow_inner {
+								position: relative;
+								@include set.flexbox();
+								@include set.flex_center();
+								background: var(--flow_bg_color);
+								border-radius: var(--flow_radius, 0);
+								font-weight: bold;
+							}
+							.branch_area {
+								@include set.flexbox();
+								justify-content: space-between;
+								.branch_box {
+									position: relative;
+									&:before {
+										//上向き矢印形＠上
+										position: absolute;
+										top: 0;
+										left: 50%;
+										transform: translate(-50%, -100%);
+										content: "";
+										background: #6ccbed;
+										clip-path: polygon(50% 0, 100% 45%, calc(100% - 0.75rem) 45%, calc(100% - 0.75rem) 100%, 0.75rem 100%, 0.75rem 45%, 0 45%);
+									}
+									&:after {
+										//進学＠上
+										position: absolute;
+										top: 0;
+										left: 50%;
+										transform: translate(-150%, -100%);
+										content: "進学";
+										color: #000;
+										font-weight: bold;
+									}
+									.flow_inner {
+										&:before {
+											//上向き矢印形＠下
+											position: absolute;
+											bottom: 0;
+											left: 50%;
+											transform: translate(-50%, 100%);
+											content: "";
+											background: #6ccbed;
+											clip-path: polygon(50% 0, 100% 45%, calc(100% - 0.75rem) 45%, calc(100% - 0.75rem) 100%, 0.75rem 100%, 0.75rem 45%, 0 45%);
+										}
+										&:after {
+											//進学＠下
+											position: absolute;
+											bottom: 0;
+											left: 50%;
+											transform: translate(-150%, 100%);
+											content: "進学";
+											color: #000;
+											font-weight: bold;
+										}
+									}
+								}
+							}
+							&.type_middle {
+								--flow_bg_color: #6ccbed;
+								--flow_radius: 9rem;
+							}
+							&.type_high {
+								.type_specialty {
+									--flow_bg_color: #000;
+									color: #fff;
+								}
+								.type_highschool {
+									--flow_bg_color: #0D9CCD;
+									--flow_radius: 50%;
+									.flow_inner {
+										aspect-ratio: 1 / 1;
+									}
+								}
+							}
+							&.type_college {
+								--flow_bg_color: #6ccbed;
+								--flow_radius: 9rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		.lead_more_btn {
+			position: relative;
+			& > * {
+				position: relative;
+				z-index: 2;
+			}
+			.btn_link {
+				border: 2px solid #000;
+				border-radius: 9rem;
+				width: min(70%, 350px);
+				margin-inline: auto;
+			}
+		}
+		.moreAccArea {
+			&.close {
+				.lead_more_btn {
+					&:before {
+						position: absolute;
+						top: 0;
+						left: 50%;
+						transform: translate(-50%, -100%);
+						content: "";
+						width: 100%;
+						height: 5rem;
+						background: linear-gradient(0deg, #fff 25%, rgba(255,255,255, 0) 90%);
+					}
+				}
+			}
+		}
+	}
+
+	.sec_cs_field {
+		//coming soonコンテンツ @ コース一覧
+		.field_list {
+			width: min(100%, var(--content_max_width));
+			margin-inline: auto;
+			.field {
+				background: #eee;
+				border: 2px solid #000;
+				border-radius: 1rem;
+				.field_img {
+					img {
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+				.txt_box {
+					font-smoothing: antialiased;
+					-webkit-font-smoothing: antialiased;
+					.field_name {
+						color: var(--usc_sub_color01);
+						border-bottom: 1px solid #000;
+					}
+					.txt_sub_box {
+						.sub_title {
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.comingsoon_area {
+		//coming soonコンテンツ @ 学生
+		.soon_inner {
+			width: min(100%, var(--content_max_width));
+			margin-inline: auto;
+		}
+		.soon_student_img {
+			.facility_photo {
+				text-align: center;
+			}
+			.student_comment {
+				position: relative;
+				@include set.flexbox();
+				@include set.flex_center();
+				background: var(--usc_sub_color01);
+				color: #fff;
+				font-weight: bold;
+				text-align: center;
+				&:before {
+					position: absolute;
+					content: "";
+					background: inherit;
+				}
+			}
+		}
+	}
+
+	.sec_roundbox {
+		//ボーダー付きBOX
+		position: relative;
+		border: 2px solid #000;
+		width: min(calc(100% - 3rem), calc(var(--content_max_width) - 4rem));
+		margin-inline: auto;
+		.roundbox_title {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 9rem;
+			border: inherit;
+			background: var(--usc_main_color);
+			color: var(--usc_main_text_color);
+		}
+		.sub_title {
+			font-weight: bold;
+			text-align: center;
+		}
+	}
+
+	.feature_list {
+		counter-reset: featureCount;
+		.feature {
+			counter-increment: featureCount;
+			.title_box {
+				.feature_title {
+					position: relative;
+					font-family: var(--font_ronde);
+					text-align: center;
+					&:before {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						content: counter(featureCount, decimal-leading-zero);
+						font-family: inherit;
+						color: rgba(var(--usc_main_rgb), 0.2);
+						font-weight: normal;
+					}
+					& > * {
+						position: relative;
+						z-index: 2;
+					}
+				}
+				.lead_box {
+					width: min(100%, calc(780px + 2rem));
+					margin-inline: auto;
+					padding-inline: 1rem;
+				}
+			}
+			&.feature01 {
+				//好きなことに打ち込める教室と設備
+				.facility_img_list {
+					.facility_img {
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						//grid-template-rows: repeat(3, 1fr);
+						&.layout_type01 {
+							//レイアウト01＠左上フォト縦長、その他通常サイズ
+							.facility_photo {
+								&:nth-child(1) {
+									grid-column: 1 / 2;
+									grid-row: 1 / 3;
+								}
+								&:nth-child(2) {
+									grid-column: 1 / 2;
+									grid-row: 3 / 4;
+								}
+								&:nth-child(3) {
+									grid-column: 2 / 3;
+									grid-row: 1 / 2;
+								}
+								&:nth-child(4) {
+									grid-column: 2 / 3;
+									grid-row: 2 / 3;
+								}
+								&:nth-child(5) {
+									grid-column: 2 / 3;
+									grid-row: 3 / 4;
+								}
+							}
+						}
+						&.layout_type02 {
+							//レイアウト02＠1つめフォト横長、左フォト縦長、その他通常
+							.facility_photo {
+								&:nth-child(1) {
+									grid-column: 1 / 3;
+									grid-row: 1 / 2;
+								}
+								&:nth-child(2) {
+									grid-column: 1 / 2;
+									grid-row: 2 / 4;
+								}
+								&:nth-child(3) {
+									grid-column: 2 / 3;
+									grid-row: 2 / 3;
+								}
+								&:nth-child(4) {
+									grid-column: 2 / 3;
+									grid-row: 3 / 4;
+								}
+							}
+						}
+						&.layout_type03 {
+							//レイアウト03＠右下フォト縦長、その他通常サイズ
+							.facility_photo {
+								&:nth-child(1) {
+									grid-column: 1 / 2;
+									grid-row: 1 / 2;
+								}
+								&:nth-child(2) {
+									grid-column: 1 / 2;
+									grid-row: 2 / 3;
+								}
+								&:nth-child(3) {
+									grid-column: 1 / 2;
+									grid-row: 3 / 4;
+								}
+								&:nth-child(4) {
+									grid-column: 2 / 3;
+									grid-row: 1 / 2;
+								}
+								&:nth-child(5) {
+									grid-column: 2 / 3;
+									grid-row: 2 / 4;
+								}
+							}
+						}
+					}
+				}
+				.btn_shadow_block {
+					width: min(calc(100% - 2rem), 600px);
+					margin-inline: auto;
+				}
+			}
+			&.feature02 {
+				//"楽しく" "自分らしく"成長できる3つの専攻
+				.major_list {
+					
+				}
+
+				.sec_wmajor {
+					.example_databox {
+						& > .databox_box {
+							& > .databox_title {
+								font-weight: 700;
+								text-align: center;
+							}
+							& > .databox_contents {
+								.select_major_list {
+									&:not(:last-child) {
+										border-bottom: 4px dotted #000;
+									}
+									.select_major {
+										font-family: var(--font_ronde);
+										&.type_entry,
+										&.type_select {
+											@include set.flexbox();
+											@include set.flex_center();
+											position: relative;
+											border: 1px solid #000;
+											border-radius: 50%;
+											aspect-ratio: 1 / 1;
+											text-align: center;
+											.strong {
+												font-weight: bold;
+											}
+											&:before {
+												position: absolute;
+												bottom: 0;
+												left: 50%;
+												transform: translate(-50%, 50%);
+												content: "";
+											}
+											&:after {
+												position: absolute;
+												font-weight: normal;
+											}
+										}
+										&.type_entry {
+											&:before {
+												background: var(--select_major_icon) no-repeat;
+												background-size: contain;
+												background-position: center;
+											}
+											&:after {
+												content: "+";
+											}
+										}
+										&.type_select {
+											background: var(--usc_main_color);
+											color: var(--usc_main_text_color);
+											&:before {
+												background: var(--select_major_icon) no-repeat;
+												background-size: contain;
+												background-position: center;
+											}
+											&:after {
+												content: "=";
+												color: #000;
+											}
+										}
+										&.type_result {
+											position: relative;
+											border-radius: 50%;
+											background: rgba(var(--usc_main_rgb), 0.2);
+											.result_txt {
+												position: absolute;
+												top: 0;
+												right: 0;
+												background: var(--usc_main_light);
+												border-radius: 0.5rem;
+											}
+											img {
+												border-radius: 50%;
+												border: 2px solid #000;
+											}
+										}
+									}
+									&.type_vocal {
+										.type_entry {
+											--select_major_icon: url(../../img/top/feature02/wmajor/major_vocal.png);
+										}
+										.type_select {
+											--select_major_icon: url(../../img/top/feature02/wmajor/major_guiter.png);
+										}
+									}
+									&.type_kpop {
+										.type_entry {
+											--select_major_icon: url(../../img/top/feature02/wmajor/major_k-pop.png);
+										}
+										.type_select {
+											--select_major_icon: url(../../img/top/feature02/wmajor/major_dance.png);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.feature03 {
+				//楽しく充実したスクールライフ
+				.uniform_wrap {
+					position: relative;
+					&:before {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						content: "";
+						background: var(--usc_main_color);
+					}
+					& > * {
+						position: relative;
+						z-index: 2;
+					}
+					.uniform_inner {
+						width: min(100%, var(--content_max_width));
+						text-align: center;
+						margin-inline: auto;
+						.point_list {
+							position: absolute;
+							top: 50%;
+							transform: translate(0, -50%);
+							.point {
+								background: url(../../img/common/bg_balloon01.png) no-repeat;
+								background-size: contain;
+								background-position: center center;
+								.main_photo {
+									img {
+										border-radius: 50%;
+									}
+								}
+							}
+							&.point_man {
+								left: 0;
+							}
+							&.point_woman {
+								right: 0;
+								scale: -1 1;
+								.main_photo {
+									img {
+										scale: -1 1;
+									}
+								}
+							}
+						}
+						.point_txt_list {
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							width: min(100%, var(--content_max_width));
+							height: 100%;
+							.point_txt {
+								position: absolute;
+								font-family: var(--font_ronde);
+								&:nth-child(1) {
+									text-align: left;
+								}
+								&:nth-child(2) {
+									text-align: center;
+								}
+								&:nth-child(3) {
+									text-align: right;
+								}
+							}
+						}
+					}
+				}
+
+				.school_life_wrap {
+					.schoollife_list {
+						width: min(calc(100% - 3rem), var(--content_max_width));
+						margin-inline: auto;
+						.schoollife {
+							position: relative;
+							background: #fff;
+							border: 2px solid #000;
+							.schoollife_title {
+								position: relative;
+								width: max-content;
+								background: var(--usc_main_color);
+								color: var(--usc_main_text_color);
+								border: 2px solid #000;
+								font-family: var(--font_ronde);
+								&:before {
+									position: absolute;
+									bottom: 0;
+									left: 0;
+									transform: translate(0, calc(100% + 1px)) rotate(45deg);
+									content: "";
+									background: linear-gradient(180deg, var(--usc_main_color) calc(100% - 2px), #000 calc(100% - 2px));
+									clip-path: polygon(50% 0, 100% 100%, 0 100%);
+								}
+							}
+							.desc {
+								em {
+									display: inline-block;
+									font-weight: bold;
+									font-style: normal;
+								}
+							}
+							.img_box {
+								position: relative;
+								img {
+									width: 100%;
+									object-fit: contain;
+								}
+							}
+							&.type_facility {
+								//施設開放
+								.illust_photo {
+									position: absolute;
+									bottom: 0;
+									right: 0;
+								}
+							}
+							&.type_rest_space {
+								//休憩スペース
+
+							}
+							&.type_teacher {
+								//担任制
+								.main_photo {
+									position: relative;
+									display: inline-block;
+									&:before,
+									&:after {
+										position: absolute;
+										content: "";
+										width: 3.5rem;
+										height: 2px;
+										background: #000;
+										border-radius: 9rem;
+										
+									}
+									&:before {
+										top: 0;
+										left: 0;
+										transform: translate(-25%, 0.5rem) rotate(-45deg);
+									}
+									&:after {
+										bottom: 0;
+										right: 0;
+										transform: translate(25%, -0.5rem) rotate(-45deg);
+									}
+									img {
+										width: auto;
+										max-width: 100%;
+									}
+								}
+								.sub_img {
+									position: absolute;
+									bottom: 0;
+									right: 0;
+								}
+							}
+							&.type_ssc {
+								//スチューデントサービスセンター（SCC）
+								.ssc_img {
+									position: relative;
+									.ssc_comment {
+										position: absolute;
+										bottom: 0;
+										left: 0;
+										font-family: var(--font_ronde);
+										border-bottom: 2px solid var(--usc_sub_color01);
+									}
+								}
+							}
+							/* &.type_oneday {
+								//高等課程の1日
+								.oneday_schedule_box {
+									position: relative;
+									.illust_img {
+										position: absolute;
+									}
+								}
+								.schedule_databox {
+									& > .databox_box {
+										@include set.flexbox();
+										font-weight: 500;
+										& > .databox_title {
+											text-align: center;
+											&:not(:empty) {
+												background: var(--usc_main_color);
+												border: 2px solid #000;
+												border-right: none;
+											}
+										}
+										& > .databox_contents {
+											background: var(--usc_sub_color01);
+											border: 2px solid #000;
+											color: #fff;
+										}
+									}
+								}
+							} */
+							&.type_event {
+								//みんなで楽しむたくさんのイベント
+								.event_list {
+									.event_photo {
+										position: relative;
+										img {
+											border: 3px solid #000;
+										}
+										.event_caption {
+											.month,
+											.event_name {
+												font-family: var(--font_ronde);
+												border: 2px solid #000;
+												background: var(--usc_sub_color01);
+												color: #fff;
+											}
+											.month {
+												position: absolute;
+												@include set.flexbox();
+												@include set.flex_center();
+												border-radius: 50%;
+												aspect-ratio: 1 / 1;
+											}
+											.event_name {
+												position: absolute;
+											}
+										}
+									}
+								}
+								.sub_img {
+									position: absolute;
+									bottom: 0;
+									right: 0;
+								}
+							}
+							/* &.type_counseling {
+								//何でも相談できるスクールカウンセリング
+								.img_box {
+									.sub_img {
+										position: absolute;
+										bottom: 0;
+										right: 0;
+										.sub_caption {
+											.comment {
+												position: absolute;
+												font-family: var(--font_ronde);
+												text-align: center;
+											}
+										}
+									}
+								}
+							}
+							&.type_dormitory {
+								//安心安全の学生寮
+								.img_box {
+									.sub_img {
+										position: absolute;
+										bottom: 0;
+										right: 0;
+										.sub_caption {
+											position: absolute;
+											font-family: var(--font_ronde);
+											text-align: center;
+											color: #fff;
+										}
+									}
+								}
+							} */
+						}
+					}
+				}
+			}
+			&.feature04 {
+				//1人ひとりに寄り添った進路サポート
+				.flow_area {
+					position: relative;
+					width: min(100%, var(--content_max_width));
+					margin-inline: auto;
+					.flow_list {
+						.flow {
+							.flow_title {
+								font-family: var(--font_ronde);
+								text-align: center;
+							}
+							&.flow_usc {
+								background: var(--usc_main_color);
+								color: var(--usc_main_text_color);
+								border: 2px solid #000;
+							}
+							&.flow_process {
+								.flow_branch_list {
+									.flow_branch {
+										position: relative;
+										&:before {
+											position: absolute;
+											content: "";
+											background: #000;
+										}
+										.branch_box {
+											position: relative;
+											background: var(--branch_bg_color, #fff);
+											border: 2px solid #000;
+											&:after {
+												position: absolute;
+												content: var(--branch_after_arrow, "");
+												background: #000;
+											}
+											.flow_title {
+												position: relative;
+												&:after {
+													position: absolute;
+													bottom: 0;
+													left: 50%;
+													transform: translate(-50%, 100%);
+													content: "";
+													border-bottom: 3px dotted #000;
+													width: min(100%, 135px);
+													height: 3px;
+												}
+											}
+											.school_logo {
+												text-align: center;
+												.school_name {
+													font-weight: bold;
+												}
+											}
+											.desc {
+												text-align: center;
+											}
+										}
+										&.type_specialist {
+											--branch_bg_color: var(--usc_main_color);
+											color: var(--usc_main_text_color);
+											.school_logo {
+												img {
+													//filter: brightness(0) invert(1);
+												}
+											}
+										}
+										&.type_partner {
+											--branch_bg_color: var(--usc_sub_color01);
+											.school_logo {
+												@include set.flexbox();
+												align-items: center;
+												.school_name {
+													text-align: left;
+												}
+											}
+										}
+										&.type_college {
+											--branch_after_arrow: none;
+										}
+										&.type_job {
+											--branch_after_arrow: none;
+
+											.branch_box {
+												@include set.flexbox();
+												flex-direction: column;
+												.flow_title {
+													flex: 1;
+													@include set.flexbox();
+													@include set.flex_center();
+												}
+												.desc {
+													flex: 1;
+												}
+											}
+										}
+									}
+								}
+							}
+							&.flow_job {
+								.flow_job_list {
+									.flow_job {
+										.job_title {
+											font-family: var(--font_ronde);
+											text-align: center;
+										}
+										&.type_creative {
+											--flow_job_color: var(--usc_main_color);
+										}
+										&.type_other {
+											--flow_job_color: var(--usc_sub_color01);
+										}
+									}
+								}
+							}
+						}
+					}
+					.student_img {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						.student_comment {
+							position: absolute;
+							background: url(../../img/common/bg_balloon02.png) no-repeat;
+							background-size: contain;
+							background-position: center center;
+							.comment {
+								display: inline-block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* LINE BOX */
+.linBox {
+	position: fixed;
+	z-index: 10000;
+}
