@@ -8,14 +8,7 @@
 
 
 
-//スライドメニュー
-"splide.min.js",
 
-//フッター固定
-"footerFixed.js",
-
-//もっと見る	
-"more.js",
 	
 //run
 "run_common.js"	
