@@ -1,177 +1,251 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>幻想ラボ</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="何が楽しい？何が癒される？何が面白い？暇を持て余す男の遊び場。それが幻想ラボ。">
-<meta name="keywords" content="音楽,幻想,癒し,web,まとめ,日本カルチャー,暇つぶし">
-<meta name="theme-color" content="#FFF">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<link rel="canonical" href="https://fantasy-lab.jp/">
-<link rel="shortcut icon" href="https://fantasy-lab.jp/favicon.ico" type="image/vnd.microsoft.icon">
-<link rel="icon" href="https://fantasy-lab.jp/favicon.ico" type="image/vnd.microsoft.icon">
-<link rel="apple-touch-icon" href="https://fantasy-lab.jp/assets/img/common/apple-touch-icon.png">
-
-<meta property="og:title" content="幻想ラボ">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="幻想ラボ">
-<meta property="og:url" content="https://fantasy-lab.jp/">
-<meta property="og:description" content="何が楽しい？何が癒される？何が面白い？暇を持て余す男の遊び場。それが幻想ラボ。">
-<meta property="og:image" content="https://fantasy-lab.jp/assets/img/ogp/ogp.jpg">
-<meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@TsmTsmk">
-<meta name="twitter:title" content="幻想ラボ">
-<meta name="twitter:description" content="何が楽しい？何が癒される？何が面白い？暇を持て余す男の遊び場。それが幻想ラボ。">
-<meta name="twitter:image:src" content="https://fantasy-lab.jp/assets/img/ogp/ogp.jpg">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Old+Standard+TT&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" href="style.css">
-</head>
-
+  <meta charset="UTF-8">
+  <title>幻想ラボ</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="何が楽しい？何が癒される？何が面白い？暇を持て余す男の遊び場。それが幻想ラボ。">
+  <meta name="keywords" content="音楽,幻想,癒し,web,まとめ,日本カルチャー,暇つぶし">
+  <meta name="theme-color" content="#FFF">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="canonical" href="https://fantasy-lab.jp/">
+  <link rel="shortcut icon" href="https://fantasy-lab.jp/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="icon" href="https://fantasy-lab.jp/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="apple-touch-icon" href="https://fantasy-lab.jp/assets/img/common/apple-touch-icon.png">
+  <meta property="og:title" content="幻想ラボ">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="幻想ラボ">
+  <meta property="og:url" content="https://fantasy-lab.jp/">
+  <meta property="og:description" content="何が楽しい？何が癒される？何が面白い？暇を持て余す男の遊び場。それが幻想ラボ。">
+  <meta property="og:image" content="https://fantasy-lab.jp/assets/img/ogp/ogp.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TsmTsmk">
+  <meta name="twitter:title" content="幻想ラボ">
+  <meta name="twitter:description" content="何が楽しい？何が癒される？何が面白い？暇を持て余す男の遊び場。それが幻想ラボ。">
+  <meta name="twitter:image:src" content="https://fantasy-lab.jp/assets/img/ogp/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Old+Standard+TT&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css"> </head>
 <body>
-
-
-		<header class="header">
-		  <div class="header_inner">
-			<div class="logo">
-			<h1 class="title"><a href="index.html"><img src="assets/img/common/logo.svg" alt="幻想ラボ">幻想ラボ</a></h1>
-			</div>
-			<nav class="nav">
-			  <ul class="nav_list">
-				<li class="nav_item"><a href="#">癒し</a></li>
-				<li class="nav_item"><a href="#">音楽</a></li>
-				<li class="nav_item"><a href="#">日本</a></li>
-				<li class="nav_item"><a href="#">実験</a></li>
-				<li class="nav_item"><a href="#">コレクション</a></li>
-				<li class="nav_item"><a href="#">まとめ</a></li>
-			  </ul>
-			</nav>
-		  </div>
-		  <div class="hamburger" id="js-hamburger">
-			<span class="hamburger_border hamburger_border_top"></span>
-			<span class="hamburger_border hamburger_border_center"></span>
-			<span class="hamburger_border hamburger_border_bottom"></span>
-		  </div>
-		  <div class="black_bg" id="js-black-bg"></div>
-		</header>
-	
-<main class="main" id="main">
-
-
-<div class="swiper">
-	<div class="swiper-wrapper">
-	  <div class="swiper-slide slide1 "><img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%"></div>
-	  <div class="swiper-slide slide2 "><img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%"></div>
-	  <div class="swiper-slide slide3 "><img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%"></div>
-	</div>
-  </div>
-
-
-<section class="container">
- <article>
-	<ul>
-
-		<li>
-			<p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
-			<div class="article_box">
-				<img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
-				<p class="date">2023.07.06</p>
-				<h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
-				<ul class="tag">
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-				</ul>
-			</div>
-		</li>
-
-
-		<li>
-			<p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
-			<div class="article_box">
-				<img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
-				<p class="date">2023.07.06</p>
-				<h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
-				<ul class="tag">
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-				</ul>
-			</div>
-		</li>
-
-
-		<li>
-			<p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
-			<div class="article_box">
-				<img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
-				<p class="date">2023.07.06</p>
-				<h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
-				<ul class="tag">
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-				</ul>
-			</div>
-		</li>
-
-
-		<li>
-			<p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
-			<div class="article_box">
-				<img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
-				<p class="date">2023.07.06</p>
-				<h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
-				<ul class="tag">
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-				</ul>
-			</div>
-		</li>
-
-
-		<li>
-			<p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
-			<div class="article_box">
-				<img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
-				<p class="date">2023.07.06</p>
-				<h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
-				<ul class="tag">
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-					<li><a href="https://www.youtube.com/">カテゴリ名</a></li>
-				</ul>
-			</div>
-		</li>
+  <header class="header">
+    <div class="header_inner">
+      <div class="logo">
+        <h1 class="title"><a href="index.html"><img src="assets/img/common/logo.svg" alt="幻想ラボ">幻想ラボ</a></h1>
+      </div>
+      <nav class="nav">
+        <ul class="nav_list">
+          <li class="nav_item"><a href="#">癒し</a></li>
+          <li class="nav_item"><a href="#">音楽</a></li>
+          <li class="nav_item"><a href="#">日本</a></li>
+          <li class="nav_item"><a href="#">実験</a></li>
+          <li class="nav_item"><a href="#">コレクション</a></li>
+          <li class="nav_item"><a href="#">まとめ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hamburger" id="js-hamburger"> <span class="hamburger_border hamburger_border_top"></span> <span class="hamburger_border hamburger_border_center"></span> <span class="hamburger_border hamburger_border_bottom"></span> </div>
+    <div class="black_bg" id="js-black-bg"></div>
+  </header>
+  <main>
+    <div class="main" id="main">
+      <div class="swiper">
+        <div class="swiper-wrapper">
 
 
 
+          <div class="swiper-slide">
+            <section class="topic_area">
+              <div class="article_box">
+                <ul>
+                  <li>
+                    <p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
+                    <div class="thumbnail"><a href="https://fantasy-lab.jp/"><img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%"></a></div>
+                  </li>
+                  <li>
+                    <p class="date">2023.07.06</p>
+                    <h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
+                    <ul class="tag">
+                      <li><a href="https://www.youtube.com/">タグ名</a></li>
+                      <li><a href="https://www.youtube.com/">タグ名</a></li>
+                      <li><a href="https://www.youtube.com/">タグ名</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+
+          <div class="swiper-slide">
+            <section class="topic_area">
+              <div class="article_box">
+                <ul>
+                  <li>
+                    <p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
+                    <div class="thumbnail"><a href="https://fantasy-lab.jp/"><img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%"></a></div>
+                  </li>
+                  <li>
+                    <p class="date">2023.07.06</p>
+                    <h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
+                    <ul class="tag">
+                      <li><a href="https://www.youtube.com/">タグ名</a></li>
+                      <li><a href="https://www.youtube.com/">タグ名</a></li>
+                      <li><a href="https://www.youtube.com/">タグ名</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+
+          <div class="swiper-slide">
+            <section class="topic_area">
+              <div class="article_box">
+                <ul>
+                  <li>
+                    <p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
+                    <div class="thumbnail"><a href="https://fantasy-lab.jp/"><img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%"></a></div>
+                  </li>
+                  <li>
+                    <p class="date">2023.07.06</p>
+                    <h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
+                    <ul class="tag">
+                      <li><a href="https://www.youtube.com/">タグ名</a></li>
+                      <li><a href="https://www.youtube.com/">タグ名</a></li>
+                      <li><a href="https://www.youtube.com/">タグ名</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+        </div>
+
+
+		<!--<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>-->
+      </div>
 
 
 
-
-	</ul>
- </article>
-</section>
-
-
-
-</main>
-	
-
-	  <!-- /.wrapper -->
-
-	  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-		<script type="text/javascript" src="assets/js/import.js"></script>
+      <section class="container">
+        <article>
+          <ul>
+            <li>
+              <p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
+              <div class="article_box"> <img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
+                <p class="date">2023.07.06</p>
+                <h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
+                <ul class="tag">
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
+              <div class="article_box"> <img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
+                <p class="date">2023.07.06</p>
+                <h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
+                <ul class="tag">
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
+              <div class="article_box"> <img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
+                <p class="date">2023.07.06</p>
+                <h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
+                <ul class="tag">
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
+              <div class="article_box"> <img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
+                <p class="date">2023.07.06</p>
+                <h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
+                <ul class="tag">
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
+              <div class="article_box"> <img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
+                <p class="date">2023.07.06</p>
+                <h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
+                <ul class="tag">
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <p class="category"><a href="https://qiita.com/fukamiiiiinmin/items/7412b21c6df5de31cab1">カテゴリ名</a></p>
+              <div class="article_box"> <img src="assets/img/top/169.jpg" alt="幻想ラボ" width="100%">
+                <p class="date">2023.07.06</p>
+                <h3 class="title"><a href="https://fantasy-lab.jp/">タイトルが入ります。タイトルが入ります。</a></h3>
+                <ul class="tag">
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                  <li><a href="https://www.youtube.com/">タグ名</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </div>
+    <section class="tag_area">
+      <p class="midashi_01"><span>約束のキーワード</span></p>
+      <ul id="tag_box" class="tag">
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+        <li><a href="https://www.youtube.com/">タグ名</a></li>
+      </ul>
+    </section>
+    <footer id="footer"><small>© 幻想ラボ ALL RIGHTS RESERVED.</small></footer>
+  </main>
+  <div id="page_top"><a href="#"></a></div>
+  <!-- /.wrapper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="assets/js/import.js"></script>
 </body>
 </html>

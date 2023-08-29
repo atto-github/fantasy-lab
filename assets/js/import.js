@@ -7,8 +7,11 @@
 })(
 
 
+//ループスライダー
+"endless-river.js",
 
-
+//フッター固定
+"footerFixed.js",
 	
 //run
 "run_common.js"	
