@@ -15,15 +15,10 @@ function toggleNav() {
 toggleNav();
 
 
+
 //スライダー
 const swiper = new Swiper(".swiper", {
-/* 
-  loop: true,
-  autoplay: {     //追記
-     delay: 10000,   //追記
-  }, 
-*/
- navigation: {
+  navigation: {
     nextEl: ".swiper-button-next",　//必須
     prevEl: ".swiper-button-prev",　//必須
   },

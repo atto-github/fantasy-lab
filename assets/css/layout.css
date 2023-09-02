@@ -26,7 +26,7 @@ body {
 .container {
   max-width: 1400px;
   width: 100%;
-  margin: 70px auto 20px;
+  margin: 100px auto 20px;
 }
 
 .header {
@@ -441,7 +441,7 @@ main .main {
 
 
 
-/*記事エリア*/
+/**********************記事エリア**********************/
 
 .container article ul {
   display: flex;
@@ -459,6 +459,105 @@ main .main {
   transition: all 0.4s;
 }
 
+
+/*最新記事*/
+
+.container article .latest_articles_box{
+  width:100%;
+  background-color: #FFF;
+  position: relative;
+  margin-bottom: 50px;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.container article .latest_articles_box .link_area a:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.container article ul li ul{
+  padding: 20px;
+}
+.container article ul li ul li .category a {
+  background-color: #FFF;
+  padding: 5px 10px;
+  border-radius: 0px 0px 10px 10px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.container article ul li ul li{
+  background: none;
+  width: calc(98% / 2);
+  position: relative;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s; 
+  margin-bottom: 0px;
+}
+
+
+.container article ul li ul li img{
+  vertical-align:top;
+}
+
+
+.container article ul li ul li .latest_articles_r .date {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.8rem;
+}
+
+.container article ul li ul li .latest_articles_r h3 {
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+
+.container article ul li ul li dl dd a {
+  font-size: 1.4rem;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .container article ul li ul li{
+    background: none;
+    width: calc(100% / 1);
+    margin-bottom: 10px;
+  }
+
+
+  .container article ul li ul li .latest_articles_r .date {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  .container article ul li ul li .latest_articles_r h3 {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  
+  .container article ul li ul li dl dd a {
+    font-size: 1.2rem;
+  }
+  .container article ul li ul li .category a {
+    font-size: 1.4rem;
+  }
+  
+}
+
+
+
+/*//最新記事*/
+
+
 @media(max-width:1000px) and (min-width:768px) {
   .container article ul li {
     width: calc(97% / 2);
@@ -475,22 +574,23 @@ main .main {
   background-color: #e5e5e5;
 }
 
-.container article ul li ul {
-  display: flex;
+.container article ul li dl {
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: start;
   position: relative;
   margin-top: 10px;
+  z-index: 90;
 }
 
-.container article ul li ul li {
+.container article ul li dl dd {
   width: auto;
   margin-bottom: 0px;
   margin-right: 10px;
   background: none;
 }
 
-.container article ul li ul li a {
+.container article ul li dl dd a {
   background-color: #FFFFFF;
   font-size: 1.2rem;
   padding: 5px 10px;
@@ -500,7 +600,7 @@ main .main {
   margin-top: 10px;
 }
 
-.container article ul li ul li a:hover {
+.container article ul li dl dd a:hover {
   background-color: #EDEDED;
   border: 1px solid #EDEDED;
 }
@@ -543,13 +643,10 @@ main .main {
 .container article ul li .article_box .title a:before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 1;
 }
-/*//記事エリア*/
+/**********************記事エリア**********************/
 
 
 /*約束のキーワード*/
