@@ -14,10 +14,15 @@ body {
 }
 
 @media screen and (min-width: 768px) {}
+
 @media screen and (max-width: 767px) {}
+
 @media(max-width:480px) {}
+
 @media(max-width:768px) and (min-width:481px) {}
+
 @media(max-width:1000px) and (min-width:769px) {}
+
 @media(min-width:1001px) {}
 
 
@@ -26,7 +31,22 @@ body {
 .container {
   max-width: 1400px;
   width: 100%;
-  margin: 100px auto 20px;
+  margin: 100px auto 50px;
+}
+
+.single_container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 100px auto 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin: 50px auto 20px;
+  }
+  .single_container {
+    margin: 50px auto 20px;
+  }
 }
 
 .header {
@@ -201,6 +221,7 @@ main .main {
 
 
 /* sp */
+
 @media only screen and (min-width: 769px) {
   .header_inner {
     max-width: 1400px;
@@ -227,21 +248,28 @@ main .main {
     font-size: 1.5rem;
   }
 }
+
+
 /* pc */
+
+
 /*//スマホメニュー*/
 
 
 /*見出し*/
+
 .midashi_01 {
   position: relative;
   padding: 1rem;
   text-align: center;
   margin-bottom: 4rem;
 }
+
 .midashi_01 span {
   font-weight: bold;
   font-size: 2.2rem;
 }
+
 .midashi_01:before {
   position: absolute;
   bottom: -10px;
@@ -252,10 +280,66 @@ main .main {
   border-radius: 3px;
   background: #000;
 }
+
+.midashi_02 {
+  padding: .5em .7em;
+  border-left: 5px solid #000000;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin: 20px 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .midashi_02 {
+    padding: .5em .7em;
+    border-left: 5px solid #000000;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: 20px 0px;
+  }
+}
+
+
+.midashi_03 {
+    position: relative;
+    padding: .5em .7em .4em;
+    border-bottom: 3px solid #000000;
+    color: #333333;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 30px;    
+}
+
+.midashi_03::before,
+.midashi_03::after {
+    position: absolute;
+    left: 30px;
+    bottom: -15px;
+    width: 30px;
+    height: 15px;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
+}
+
+.midashi_03::before {
+    background-color: #000000;
+}
+
+.midashi_03::after {
+    bottom: -11px;
+    background-color: #fff;
+}
+
+
+
+
 /*//見出し*/
 
 
 /*スライダー*/
+
 .swiper {
   width: min(100%, 1400px);
   margin: 50px 0px;
@@ -271,6 +355,7 @@ main .main {
   color: #c9c9c9;
   z-index: 999;
 }
+
 
 /*//スライダー*/
 
@@ -437,8 +522,9 @@ main .main {
     font-size: 1.4rem;
   }
 }
-/*//トピックエリア*/
 
+
+/*//トピックエリア*/
 
 
 /**********************記事エリア**********************/
@@ -462,8 +548,8 @@ main .main {
 
 /*最新記事*/
 
-.container article .latest_articles_box{
-  width:100%;
+.container article .latest_articles_box {
+  width: 100%;
   background-color: #FFF;
   position: relative;
   margin-bottom: 50px;
@@ -479,9 +565,10 @@ main .main {
   z-index: 1;
 }
 
-.container article ul li ul{
+.container article ul li ul {
   padding: 20px;
 }
+
 .container article ul li ul li .category a {
   background-color: #FFF;
   padding: 5px 10px;
@@ -495,21 +582,19 @@ main .main {
   z-index: 10;
 }
 
-.container article ul li ul li{
+.container article ul li ul li {
   background: none;
   width: calc(98% / 2);
   position: relative;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
-  transition: all 0.4s; 
+  transition: all 0.4s;
   margin-bottom: 0px;
 }
 
-
-.container article ul li ul li img{
-  vertical-align:top;
+.container article ul li ul li img {
+  vertical-align: top;
 }
-
 
 .container article ul li ul li .latest_articles_r .date {
   font-family: 'Fjalla One', sans-serif;
@@ -525,38 +610,30 @@ main .main {
   font-size: 1.4rem;
 }
 
-
 @media screen and (max-width: 1000px) {
-  .container article ul li ul li{
+  .container article ul li ul li {
     background: none;
     width: calc(100% / 1);
     margin-bottom: 10px;
   }
-
-
   .container article ul li ul li .latest_articles_r .date {
     font-family: 'Fjalla One', sans-serif;
     font-size: 1.2rem;
   }
-  
   .container article ul li ul li .latest_articles_r h3 {
     font-weight: bold;
     font-size: 1.6rem;
   }
-  
   .container article ul li ul li dl dd a {
     font-size: 1.2rem;
   }
   .container article ul li ul li .category a {
     font-size: 1.4rem;
   }
-  
 }
 
 
-
 /*//最新記事*/
-
 
 @media(max-width:1000px) and (min-width:768px) {
   .container article ul li {
@@ -646,7 +723,140 @@ main .main {
   inset: 0;
   z-index: 1;
 }
+
+
 /**********************記事エリア**********************/
+
+
+/*投稿記事*/
+
+.single_container .post_area {
+  padding: 40px;
+  background-color: #FFF;
+}
+
+@media screen and (max-width: 767px) {
+  .single_container .post_area {
+    padding: 20px;
+    background-color: #FFF;
+  }
+}
+
+.single_container .post_area .main_visual {
+  width: 100%;
+  margin-bottom: 40px;
+  ;
+}
+
+.single_container .post_area ul {
+  display: inline-flex;
+}
+
+.single_container .post_area ul li {}
+
+.single_container .post_area ul li .category a {
+  background-color: #333333;
+  border-radius: 10px;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #FFF;
+  padding: 10px;
+}
+
+.single_container .post_area ul li .category a:hover {}
+
+.single_container .post_area ul li .date {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.4rem;
+}
+
+.single_container .post_area dl {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  z-index: 90;
+}
+
+.single_container .post_area dl dd {
+  width: auto;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  background: none;
+}
+
+.single_container .post_area dl dd a {
+  background-color: #FFFFFF;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #CCC;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.single_container .post_area dl dd a:hover {
+  background-color: #EDEDED;
+  border: 1px solid #EDEDED;
+}
+
+.single_container .post_area h4 {
+  font-weight: bold;
+  font-size: 2.2rem;
+  display: block;
+  margin: 20px 0px 40px;
+  border-bottom: 1px #999 dashed;
+  padding-bottom: 10px;
+}
+
+.single_container .post_area .post_box p {
+  margin-bottom: 15px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .single_container .post_area h4 {
+    font-size: 2rem;
+  }
+  .single_container .post_area .post_box p {
+    font-size: 1.6rem;
+  }
+}
+
+
+/*2カラム*/
+
+.single_container .main_post_area{
+  display: flex;
+  justify-content: space-between;
+}
+
+.single_container .main_post_area .main_post{
+width: 65%;
+}
+.single_container .main_post_area .side_menu{
+width: 30%;
+}
+
+@media screen and (max-width: 1000px) {
+  .single_container .main_post_area{
+    display: block;
+    justify-content: space-between;
+  }
+  
+  .single_container .main_post_area .main_post{
+  width: 100%;
+  }
+  .single_container .main_post_area .side_menu{
+  width: 100%;
+  }
+}
+
+
+/*//投稿記事*/
 
 
 /*約束のキーワード*/
@@ -670,10 +880,13 @@ main .main {
 .tag_area ul li a:hover {
   background-color: #EDEDED;
 }
+
+
 /*//約束のキーワード*/
 
 
 /*フッターエリア*/
+
 footer {
   background-color: #333;
 }
@@ -685,10 +898,13 @@ footer small {
   display: block;
   font-size: 1.4rem;
 }
+
+
 /*//フッターエリア*/
 
 
 /*ページトップ*/
+
 #page_top {
   width: 50px;
   height: 50px;
@@ -724,4 +940,6 @@ footer small {
   margin: auto;
   text-align: center;
 }
+
+
 /*//ページトップ*/

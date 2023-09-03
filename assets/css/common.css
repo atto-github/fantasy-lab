@@ -163,6 +163,25 @@ html {
 }
 
 
+/*--- block_box ----------*/
+
+.dl_box01{
+  margin-bottom: 1rem;
+}
+.dl_box02{
+  margin-bottom: 2rem;
+}
+.dl_box03{
+  margin-bottom: 3rem;
+}
+.dl_box04{
+  margin-bottom: 4rem;
+}
+.dl_box05{
+  margin-bottom: 5rem;
+}
+
+
 /* ----------------------------------------------
 　4.  フォント（font-size、color、font-weight、text-align）
 ---------------------------------------------- */
